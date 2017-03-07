@@ -2,29 +2,28 @@ package fr.univavignon.pokedex.api;
 
 import java.util.Comparator;
 
-import org.junit.Assert;
 import org.junit.Test;
 
 public class IPokedexTest {
 
 	@Test
-	public void size() {
+	public void testSize() {
 	}
 	
 	@Test
-	public void addPokemon(Pokemon pokemon) {
+	public void testAddPokemon(Pokemon pokemon) {
 	}
 	
 	@Test
-	public void getPokemon(int id) {	
+	public void testGetPokemon(int id) {	
 	}
 	
 	@Test
-	public void getPokemons() {
+	public void testGetPokemons() {
 	}
 	
 	@Test
-	public void getPokemons(Comparator<Pokemon> order) {	
+	public void testGetPokemons(Comparator<Pokemon> order) {	
 	}
 	
 }
