@@ -1,13 +1,13 @@
 machine:
-  java:
-    version:
-      oraclejdk8
+    java:
+      version:
+        oraclejdk8
 
 test:
-  override:
-    - mvn deploy
+    override:
+      - mvn deploy
 
 general:
-  branches:
-    only:
-      - master
+    branches:
+      only:
+        - master
