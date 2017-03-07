@@ -5,15 +5,6 @@ import org.junit.Test;
 
 public class IPokedexFactoryTest  {
 	
-	/**
-	 * Creates a new pokedex instance using the given 
-	 * <tt>metadataProvider</tt> and <tt>pokemonFactory</tt>. 
-	 * 
-	 * @param metadataProvider Metadata provider the created pokedex will use.
-	 * @param pokemonFactory Pokemon factory the created pokedex will use.
-	 * @return Created pokedex instance.
-	 */
-	
 	@Test
 	public void testCreatePokedex() {
 		try {
@@ -23,13 +14,12 @@ public class IPokedexFactoryTest  {
 			
 			IPokedex pokedex = pokedexFactory.createPokedex(metadataProvider, pokemonFactory);
 			
-			int indexPika = 25;
-			Pokemon pikachu = new Pokemon(indexPika, "Pikachu", 3, 2, 2, 2, 2, 0, 0, 0);
-			int idPikachu = pokedex.addPokemon(pikachu);
-			Assert.assertTrue(pokedex.getPokemon(idPikachu).equals(pikachu));
+			Pokemon bulbizarre = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
+			int idBulbi = pokedex.addPokemon(bulbizarre);
+			Assert.assertTrue(pokedex.getPokemon(idBulbi).equals(bulbizarre));
 		}
-		catch (PokedexException pex) {
-			pex.printStackTrace();
+		catch (Exception e) {
+			e.printStackTrace();
 		}
 	}
 	
