@@ -11,19 +11,14 @@ public class IPokedexTest {
 	}
 	
 	@Test
-	public void testAddPokemon(Pokemon pokemon) {
+	public void testAddPokemon() {
 	}
 	
 	@Test
-	public void testGetPokemon(int id) {	
+	public void testGetPokemon() {	
 	}
 	
 	@Test
 	public void testGetPokemons() {
 	}
-	
-	@Test
-	public void testGetPokemons(Comparator<Pokemon> order) {	
-	}
-	
 }
