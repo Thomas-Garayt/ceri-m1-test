@@ -17,9 +17,9 @@ public class IPokedexFactoryTest  {
 	@Test
 	public void testCreatePokedex() {
 		try {
-			IPokemonMetadataProvider metadataProvider = MegaFactory.getIPokemonMetadataProvider();
-			IPokemonFactory pokemonFactory = MegaFactory.getIPokemonFactory();
-			IPokedexFactory pokedexFactory = MegaFactory.getIPokedexFactory();
+			IPokemonMetadataProvider metadataProvider = GlobalFactory.getIPokemonMetadataProvider();
+			IPokemonFactory pokemonFactory = GlobalFactory.getIPokemonFactory();
+			IPokedexFactory pokedexFactory = GlobalFactory.getIPokedexFactory();
 			
 			IPokedex pokedex = pokedexFactory.createPokedex(metadataProvider, pokemonFactory);
 			
@@ -27,11 +27,6 @@ public class IPokedexFactoryTest  {
 			Pokemon pikachu = new Pokemon(indexPika, "Pikachu", 3, 2, 2, 2, 2, 0, 0, 0);
 			int idPikachu = pokedex.addPokemon(pikachu);
 			Assert.assertTrue(pokedex.getPokemon(idPikachu).equals(pikachu));
-			
-			/*
-			Pokemon autrePika = pokedex.createPokemon(indexPika, 2, 3, 2, 1);
-			pokedex.getPokemonMetadata(indexPika).get
-			*/
 		}
 		catch (PokedexException pex) {
 			pex.printStackTrace();
