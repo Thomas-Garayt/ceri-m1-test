@@ -5,7 +5,7 @@ machine:
 
 test:
     override:
-      - mvn deploy
+      - mvn test
 
 general:
     branches:
