@@ -5,7 +5,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<groupId>fr.univavignon</groupId>
 	<artifactId>forkthemall</artifactId>
 	<name>Fork Them All</name>
-	<version>0.0.1</version>
+	<version>1.0.0</version>
 
     <build>
 		<sourceDirectory>src/main/java</sourceDirectory>
