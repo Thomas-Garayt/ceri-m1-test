@@ -1,26 +1,45 @@
 package fr.univavignon.pokedex.api;
 
 import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.mockito.junit.MockitoJUnit;
+import org.mockito.junit.MockitoRule;
+
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.when;
 
 public class IPokedexFactoryTest  {
+
+    @Rule
+    public MockitoRule mockitoRule = MockitoJUnit.rule();
+    
+    @Mock
+    private static IPokedexFactory pokedexFactory;
+    
+    @Mock
+    private static IPokemonMetadataProvider pokemonMetadataProvider;
+    
+    @Mock
+    private static IPokemonFactory pokemonFactory;
+    
+    @Mock
+    private static IPokedex pokedex;
+	
+    @Before
+    public void setUp() {
+        MockitoAnnotations.initMocks(this);
+        IPokedex mockPokedex = mock(IPokedex.class);
+        when(pokedexFactory.createPokedex(pokemonMetadataProvider, pokemonFactory))
+                .thenReturn(mockPokedex);
+    }
 	
 	@Test
 	public void testCreatePokedex() {
-		try {
-			IPokemonMetadataProvider metadataProvider = GlobalFactory.getIPokemonMetadataProvider();
-			IPokemonFactory pokemonFactory = GlobalFactory.getIPokemonFactory();
-			IPokedexFactory pokedexFactory = GlobalFactory.getIPokedexFactory();
-			
-			IPokedex pokedex = pokedexFactory.createPokedex(metadataProvider, pokemonFactory);
-			
-			Pokemon bulbizarre = new Pokemon(0, "Bulbizarre", 126, 126, 90, 613, 64, 4000, 4, 56);
-			int idBulbi = pokedex.addPokemon(bulbizarre);
-			Assert.assertTrue(pokedex.getPokemon(idBulbi).equals(bulbizarre));
-		}
-		catch (Exception e) {
-			e.printStackTrace();
-		}
+		Assert.assertEquals(pokedex.size(), pokedexFactory.createPokedex(pokemonMetadataProvider, pokemonFactory).size());
 	}
 	
 }

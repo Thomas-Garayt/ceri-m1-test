@@ -1,37 +1,46 @@
 package fr.univavignon.pokedex.api;
 
+import org.junit.Before;
 import org.junit.Rule;
 import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
 public class GlobalFactory {
-	@Mock
+	
+	@Mock 
 	private static IPokemonMetadataProvider metadataProvider;
 	
-	@Mock
+	@Mock 
 	private static IPokemonFactory pokemonFactory;
 	
-	@Mock
+	@Mock 
 	private static IPokedexFactory pokedexFactory;
 	
-	@Mock
+	@Mock 
 	private static IPokemonTrainerFactory trainerFactory;
 	
-	@Rule
+	@Rule 
 	public MockitoRule mockitoRule = MockitoJUnit.rule(); 
 	
+	
+	@Before
+	public void setUp() {
+	    MockitoAnnotations.initMocks(this);	
+	}
 	
 	public static IPokemonMetadataProvider getIPokemonMetadataProvider() {
 		return metadataProvider;
 	}
 
 	public static IPokemonFactory getIPokemonFactory() {
-		return pokemonFactory;
+		return Mockito.mock(IPokemonFactory.class);
 	}
 
 	public static IPokedexFactory getIPokedexFactory() {
-		return pokedexFactory;
+		return Mockito.mock(IPokedexFactory.class);
 	}
 
 	public static IPokemonTrainerFactory getIPokemonTrainerFactory() {
