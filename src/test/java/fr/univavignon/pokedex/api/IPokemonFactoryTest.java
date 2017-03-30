@@ -31,13 +31,6 @@ public class IPokemonFactoryTest {
         Pokemon pokemon = pokemonFactory.createPokemon(133, 2729, 202, 5000, 4);
         
         /* Testing if the pokemon is correctly created */
-        /*
-        Assert.assertEquals("Aquali", pokemon.getName());
-        Assert.assertEquals(133, pokemon.getIndex());
-        Assert.assertEquals(186, pokemon.getAttack());
-        Assert.assertEquals(168, pokemon.getDefense());
-        Assert.assertEquals(260, pokemon.getStamina());
-        */
         Assert.assertEquals(2729, pokemon.getCp());
         Assert.assertEquals(202, pokemon.getHp());
         Assert.assertEquals(5000, pokemon.getDust());

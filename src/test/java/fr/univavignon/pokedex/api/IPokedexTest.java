@@ -28,7 +28,7 @@ public class IPokedexTest {
     private static Pokemon aquali = new Pokemon(133,"Aquali",186,168,260,2729,202,5000,4,100);
     
     private static Comparator<Pokemon> comparatorName = Comparator.comparing(PokemonMetadata::getName);
-    private static Comparator<Pokemon> comparatorAttack = Comparator.comparing(PokemonMetadata::getAttack);    
+    private static Comparator<Pokemon> comparatorAttack = Comparator.comparing(PokemonMetadata::getAttack);
     
     @Before
     public void setUp() throws PokedexException {

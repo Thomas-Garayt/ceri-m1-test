@@ -27,26 +27,11 @@ public class IPokemonMetadataProviderTest {
     @Test
     public void testGetPokemonMetadata() throws PokedexException {
     	PokemonMetadata pokemonMP = pokemonMetadataProvider.getPokemonMetadata(0);
+        Assert.assertEquals(0, pokemonMP.getIndex());
         Assert.assertEquals("Bulbizarre", pokemonMP.getName());
+        Assert.assertEquals(126, pokemonMP.getAttack());
+        Assert.assertEquals(126, pokemonMP.getDefense());
+        Assert.assertEquals(90, pokemonMP.getStamina());
     }
-    
-    @Test
-    public void testGetPokemonMetadata() {
-        Pokemon pokemon = pokemonFactory.createPokemon(133, 2729, 202, 5000, 4);
-                
-        /* Metadata - specific to the species */
-        Assert.assertEquals("Aquali", pokemon.getName());
-        Assert.assertEquals(133, pokemon.getIndex());
-        Assert.assertEquals(186, pokemon.getAttack());
-        Assert.assertEquals(168, pokemon.getDefense());
-        Assert.assertEquals(260, pokemon.getStamina());
-        
-        /*
-        Assert.assertEquals(2729, pokemon.getCp());
-        Assert.assertEquals(202, pokemon.getHp());
-        Assert.assertEquals(5000, pokemon.getDust());
-        Assert.assertEquals(4, pokemon.getCandy());
-         */
-    }
-	
+  	
 }
