@@ -92,8 +92,8 @@ public class IPokedexTest {
         List<Pokemon> pokedexOrderedWithName = pokedex.getPokemons(comparatorAttack);
         List<Pokemon> pokedexOrderedWithAttack = pokedex.getPokemons(comparatorName);
         
-        Assert.assertTrue(pokedexNoOrdered.indexOf(aquali) >= pokedexOrderedWithName.indexOf(aquali));
-        Assert.assertTrue(pokedexOrderedWithName.indexOf(aquali) <= pokedexOrderedWithAttack.indexOf(aquali));
+        Assert.assertTrue(pokedexNoOrdered.indexOf(aquali) <= pokedexOrderedWithName.indexOf(aquali));
+        Assert.assertTrue(pokedexOrderedWithName.indexOf(aquali) >= pokedexOrderedWithAttack.indexOf(aquali));
     }
     
 }
