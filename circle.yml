@@ -5,7 +5,7 @@ machine:
 
 test:
     override:
-        - mvn clean test
+        - mvn test
     post:
         - mvn jacoco:prepare-agent
         - mvn jacoco:report
