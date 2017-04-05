@@ -6,9 +6,6 @@ machine:
 test:
     override:
       - mvn test
-
-install:
-    override:
       - mvn install
 
 general:
