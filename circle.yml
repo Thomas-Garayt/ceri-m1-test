@@ -8,7 +8,7 @@ test:
         - mvn test
     post:
         - mvn jacoco:report
-        - mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/report/jacoco/jacoco.xml -DprojectToken=blah -DapiToken=blah
+        - mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/report/jacoco/jacoco.xml -DprojectToken=f6122739cc1c49d8bc7c024833691a6e -DapiToken=blah
 
 general:
     branches:
