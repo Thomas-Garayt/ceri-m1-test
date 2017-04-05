@@ -1,7 +1,6 @@
 ## UCE Génie Logiciel Avancé : Techniques de tests
 
-## DAUDEL Adrien & GARAYT Thomas
-## Binôme d'alternants
+## DAUDEL Adrien & GARAYT Thomas - Binôme d'alternants
 
 
 ### CircleCI [![CircleCI](https://circleci.com/gh/Thomas-Garayt/ceri-m1-test.svg?style=svg)](https://circleci.com/gh/Thomas-Garayt/ceri-m1-test)
