@@ -7,6 +7,8 @@ test:
     override:
         - mvn test
     post:
+        - export CODACY_API_TOKEN=brX09D6DqCPrNHRS7aW7
+        - export CODACY_PROJECT_TOKEN=f6122739cc1c49d8bc7c024833691a6e
         - mvn jacoco:report
         - mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=/target/report/jacoco/jacoco.xml -DprojectToken=$CODACY_PROJECT_TOKEN -DapiToken=$CODACY_API_TOKEN
 
