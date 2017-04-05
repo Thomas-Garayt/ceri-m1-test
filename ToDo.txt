@@ -11,3 +11,7 @@ pour une espèce donnée (id), retourner les carac d'une espèce  (pokemonMetaDa
 - IPokemonFactory :
 créer des pokemons, avec des IV (calculateur d'IV - IV Calculator sur Google) - récupérer les stats, envoer sur site, récupérer data
 
+
+Obtenir les metadata en fournissant un ID :
+https://pokemongo-webcloud12.rhcloud.com/pokemon_api.php?id=1
+
