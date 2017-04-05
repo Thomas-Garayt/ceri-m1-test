@@ -32,37 +32,12 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 				</configuration>
 			</plugin>
 
-			<plugin>
+            <plugin>
                 <groupId>org.jacoco</groupId>
                 <artifactId>jacoco-maven-plugin</artifactId>
                 <version>0.7.9</version>
-                <executions>
-                    <execution>
-                        <id>default-prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>default-report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                </executions>
-			</plugin>
-			
-			<plugin>
-                <groupId>com.gavinmogan</groupId>
-                <artifactId>codacy-maven-plugin</artifactId>
-                <version>1.0.3</version>
                 <configuration>
-                    <apiToken>${CODACY_API_TOKEN}</apiToken>
-                    <projectToken>${CODACY_PROJECT_TOKEN}</projectToken>
-                    <language>Java</language>
-                    <coverageReportFile>target/report/jacoco/jacoco.xml</coverageReportFile>
-                    <failOnMissingReportFile>false</failOnMissingReportFile>
+                    <dataFile>${project.artifactId}/target/jacoco.exec</dataFile>
                 </configuration>
 			</plugin>
 			
