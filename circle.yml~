@@ -7,10 +7,6 @@ test:
     override:
       - mvn test
 
-install:
-    override:
-      - mvn install
-
 general:
     branches:
       only:
