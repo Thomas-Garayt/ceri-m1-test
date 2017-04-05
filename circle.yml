@@ -5,7 +5,7 @@ machine:
 
 test:
     override:
-        - mvn test
+      - mvn test
 
 general:
     branches:
