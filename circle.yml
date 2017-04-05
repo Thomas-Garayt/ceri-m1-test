@@ -5,8 +5,9 @@ machine:
 
 test:
     override:
-        - mvn test
+        - mvn clean test
     post:
+        - echo ${CODACY_PROJECT_TOKEN}
         - export CODACY_API_TOKEN=brX09D6DqCPrNHRS7aW7
         - export CODACY_PROJECT_TOKEN=f6122739cc1c49d8bc7c024833691a6e
         - mvn jacoco:report
