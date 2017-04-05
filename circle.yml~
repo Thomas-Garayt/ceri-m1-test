@@ -7,7 +7,6 @@ test:
     override:
       - mvn test
       - mvn coverage
-      - mvn coverageReport
 
 general:
     branches:
