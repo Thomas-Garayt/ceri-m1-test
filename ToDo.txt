@@ -1,0 +1,14 @@
+- Implémenter les 5 interfaces
+- Utiliser un max de librairies (Selenium en Java pour manipuler une page web par ex) - uniquement besoin
+
+
+- IPokemonTrainerFactory : 
+pour chaque trainer créer : le sérialiser pour pouvoir le save sur disque (il contient un pokedex)
+
+- PokemonMetaDataProvider :
+pour une espèce donnée (id), retourner les carac d'une espèce  (pokemonMetaData - à récup sur un git par ex)
+
+- IPokemonFactory :
+créer des pokemons, avec des IV (calculateur d'IV - IV Calculator sur Google) - récupérer les stats, envoer sur site, récupérer data
+
+- 
