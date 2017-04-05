@@ -53,6 +53,19 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
                 </executions>
 			</plugin>
 			
+			<plugin>
+                <groupId>com.gavinmogan</groupId>
+                <artifactId>codacy-maven-plugin</artifactId>
+                <version>1.0.3</version>
+                <configuration>
+                    <apiToken>${CODACY_API_TOKEN}</apiToken>
+                    <projectToken>${CODACY_PROJECT_TOKEN}</projectToken>
+                    <language>Java</language>
+                    <coverageReportFile>target/report/jacoco/jacoco.xml</coverageReportFile>
+                    <failOnMissingReportFile>false</failOnMissingReportFile>
+                </configuration>
+			</plugin>
+			
 		</plugins>
 	</build>
 
