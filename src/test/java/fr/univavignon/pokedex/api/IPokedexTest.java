@@ -95,5 +95,5 @@ public class IPokedexTest {
         Assert.assertTrue(pokedexNoOrdered.indexOf(aquali) <= pokedexOrderedWithName.indexOf(aquali));
         Assert.assertTrue(pokedexOrderedWithName.indexOf(aquali) >= pokedexOrderedWithAttack.indexOf(aquali));
     }
-    
+     
 }

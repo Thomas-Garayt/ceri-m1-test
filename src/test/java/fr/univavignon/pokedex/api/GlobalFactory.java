@@ -12,13 +12,7 @@ public class GlobalFactory {
 	
 	@Mock 
 	private static IPokemonMetadataProvider metadataProvider;
-	
-	@Mock 
-	private static IPokemonFactory pokemonFactory;
-	
-	@Mock 
-	private static IPokedexFactory pokedexFactory;
-	
+		
 	@Mock 
 	private static IPokemonTrainerFactory trainerFactory;
 	
