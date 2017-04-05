@@ -5,9 +5,11 @@ machine:
 
 test:
     override:
-      - mvn test
+        - mvn test
     post:
-      - mvn jacoco:report
+        - mvn jacoco:report
+        - mvn com.gavinmogan:codacy-maven-plugin:coverage -DcoverageReportFile=target/report/jacoco/jacoco.xml -DprojectToken=blah -DapiToken=blah
+        - codacy-coverage-reporter -l Java -r target/site/jacoco/jacoco.xml
 
 general:
     branches:
