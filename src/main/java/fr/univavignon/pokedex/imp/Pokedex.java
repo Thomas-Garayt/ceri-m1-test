@@ -1,4 +1,4 @@
-package imp;
+package fr.univavignon.pokedex.imp;
 import java.util.Comparator;
 import java.util.List;
 

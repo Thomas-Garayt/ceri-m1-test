@@ -1,4 +1,4 @@
-package imp;
+package fr.univavignon.pokedex.imp;
 
 import fr.univavignon.pokedex.api.*;
 
