@@ -6,7 +6,7 @@ machine:
 test:
     override:
       - mvn test
-      - mvn install
+      - mvn coverage
 
 general:
     branches:
