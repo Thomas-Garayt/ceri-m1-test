@@ -1,6 +1,7 @@
 # UCE Génie Logiciel Avancé : Techniques de tests
 
 # DAUDEL Adrien & GARAYT Thomas
+# Binôme d'alternants
 
 
 ## CircleCI ##
