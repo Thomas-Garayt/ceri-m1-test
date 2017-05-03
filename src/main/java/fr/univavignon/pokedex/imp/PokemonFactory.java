@@ -5,16 +5,52 @@ import fr.univavignon.pokedex.api.*;
 public class PokemonFactory implements IPokemonFactory {
 
 	@Override
-	public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
-		// TODO Auto-generated method stub
+    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
 
-		return null;
-		
-		// Name, Attack, Defense and Stamina has to be get on webservice
-		
-		// IV has to be get using a web calculator
+        PokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
 
-		// Pokemon pokemon = new Pokemon(index, name, attack, defense, stamina, cp, hp, dust, candy, iv/);	
-	}
+        Pokemon pokemon = null;
+
+        try {
+
+            PokemonMetadata metadata = metadataProvider.getPokemonMetadata(index);
+
+            double iv = this.computeIV();
+
+            pokemon = new Pokemon(
+                    index,
+                    metadata.getName(),
+                    metadata.getAttack(),
+                    metadata.getDefense(),
+                    metadata.getStamina(),
+                    cp,
+                    hp,
+                    dust,
+                    candy,
+                    iv
+            );
+
+        } catch (PokedexException e) {
+            e.printStackTrace();
+        }
+
+
+        return pokemon;
+    }
+
+
+    /**
+     * Compute the IV for a given pokemon
+     *
+     * @return double
+     */
+    private double computeIV() {
+
+        double iv = 0;
+
+        // Todo: calculate IV
+
+        return iv;
+}
 	
 }
