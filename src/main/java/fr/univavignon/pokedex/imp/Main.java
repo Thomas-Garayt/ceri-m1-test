@@ -169,11 +169,9 @@ public class Main {
 				break;
 		}
 		
-		PokedexFactory pk = new PokedexFactory();
-		
 		PokemonTrainerFactory pt = new PokemonTrainerFactory();
 		
-		pokeTrainer = pt.createTrainer(str_Name,team,pk);
+		pokeTrainer = pt.createTrainer(str_Name,team,new PokedexFactory());
 	}
 	
 }
