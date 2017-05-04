@@ -46,8 +46,10 @@ public class Main {
 					break;
 				case "2":
 					newTrainer();
+					break;
 				case "3":
 					seePokedex();
+					break;
 				default:
 			}
 			
