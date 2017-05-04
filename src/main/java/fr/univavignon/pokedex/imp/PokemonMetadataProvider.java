@@ -37,11 +37,8 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider, Serial
         try {
 
             if (checkFile(path, Integer.toString(index))) {
-                System.out.println("Loading metadata: " + index);
                 metadata = (PokemonMetadata) this.loadData(Integer.toString(index));
             } else {
-                System.out.println("Downloading metadata: " + index);
-//                String content = this.curl(link);
                 String content = Curl.curl(link);
                 metadata = this.json2PokemonMetadata(content);
                 this.saveData(metadata);

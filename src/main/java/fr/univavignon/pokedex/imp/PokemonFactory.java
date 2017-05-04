@@ -11,7 +11,7 @@ public class PokemonFactory implements IPokemonFactory {
         PokemonMetadataProvider metadataProvider = new PokemonMetadataProvider();
 
         Pokemon pokemon = null;
-
+        
         try {
 
             PokemonMetadata metadata = metadataProvider.getPokemonMetadata(index);
@@ -36,6 +36,7 @@ public class PokemonFactory implements IPokemonFactory {
                     candy,
                     iv
             );
+
 
         } catch (PokedexException e) {
             e.printStackTrace();
@@ -68,7 +69,7 @@ public class PokemonFactory implements IPokemonFactory {
                 + "&levelUp=" + levelUp;
 
         String link = ivapi + params;
-
+        
         try {
             iv = Double.parseDouble(Curl.curl(link));
         } catch (IOException e) {
