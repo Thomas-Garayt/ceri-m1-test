@@ -3,10 +3,9 @@ package fr.univavignon.pokedex.api;
 /**
  * Factory interface for class that aims to create Pokemon instance.
  *
- * @author fv
+ * @author Pierre Perez
  */
-public interface IPokemonFactory {
-
+public class PokemonFactory implements IPokemonFactory {
     /**
      * Creates a pokemon instance computing it IVs.
      *
@@ -17,5 +16,8 @@ public interface IPokemonFactory {
      * @param candy Required candy for upgrading pokemon.
      * @return Created pokemon instance.
      */
-    Pokemon createPokemon(int index, int cp, int hp, int dust, int candy);
+    @Override
+    public Pokemon createPokemon(int index, int cp, int hp, int dust, int candy) {
+        return null;
+    }
 }

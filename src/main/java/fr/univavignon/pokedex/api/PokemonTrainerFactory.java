@@ -3,10 +3,9 @@ package fr.univavignon.pokedex.api;
 /**
  * Factory interface for class that aims to create PokemonTrainer instance.
  *
- * @author fv
+ * @author Pierre Perez
  */
-public interface IPokemonTrainerFactory {
-
+public class PokemonTrainerFactory implements IPokemonTrainerFactory {
     /**
      * Creates and returns a PokemonTrainer instance.
      *
@@ -15,5 +14,8 @@ public interface IPokemonTrainerFactory {
      * @param pokedexFactory Factory to use for creating associated pokedex instance.
      * @return Created trainer instance.
      */
-    PokemonTrainer createTrainer(String name, Team team, IPokedexFactory pokedexFactory);
+    @Override
+    public PokemonTrainer createTrainer(String name, Team team, IPokedexFactory pokedexFactory) {
+        return null;
+    }
 }

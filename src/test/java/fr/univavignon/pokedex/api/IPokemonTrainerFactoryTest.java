@@ -10,6 +10,8 @@ import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnit;
 import org.mockito.junit.MockitoRule;
 
+import fr.univavignon.pokedex.imp.Pokedex;
+
 public class IPokemonTrainerFactoryTest {
 
     @Rule
@@ -22,7 +24,7 @@ public class IPokemonTrainerFactoryTest {
     private static IPokemonTrainerFactory pokemonTrainerFactory;
 
     @Mock
-	private static IPokedex pokedex;
+	private static Pokedex pokedex;
     
 	private static PokemonTrainer trainerTest = new PokemonTrainer("Toto",Team.MYSTIC, pokedex);
     

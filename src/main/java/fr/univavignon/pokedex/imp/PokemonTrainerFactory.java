@@ -10,7 +10,7 @@ import fr.univavignon.pokedex.api.PokedexException;
 import fr.univavignon.pokedex.api.PokemonTrainer;
 import fr.univavignon.pokedex.api.Team;
 
-public class PokemonTrainerFactory implements IPokemonTrainerFactory, IGSerializer {
+public class PokemonTrainerFactory implements IPokemonTrainerFactory, SerializerTool {
 
 	private String path;
 
@@ -36,20 +36,38 @@ public class PokemonTrainerFactory implements IPokemonTrainerFactory, IGSerializ
             if (checkFile(path, name)) {
                 System.out.println("Loading " + name + "...");
                 pokemonTrainer = (PokemonTrainer) this.loadData(name);
+                System.out.println("Load successfully");
             } else {
                 System.out.println("Saving " + name + "...");
                 pokemonTrainer = new PokemonTrainer(name, team, pokedex);
                 this.saveData(pokemonTrainer);
+                System.out.println("Saving successfully");
             }
 
         } catch (Exception e) {
             e.getMessage();
         }
 
-
         return pokemonTrainer;
     }
 
+    public PokemonTrainer createTrainer(String name) {
+
+        PokemonTrainer pokemonTrainer = null;
+
+        try {
+            if (checkFile(path, name)) {
+                System.out.println("Loading " + name + "...");
+                pokemonTrainer = (PokemonTrainer) this.loadData(name);
+                System.out.println("Load successfully");
+            } 
+        } catch (Exception e) {
+            e.getMessage();
+        }
+
+        return pokemonTrainer;
+    }
+    
     @Override
     public void saveData(Object object) throws IOException, PokedexException {
 
@@ -68,13 +86,12 @@ public class PokemonTrainerFactory implements IPokemonTrainerFactory, IGSerializ
         this.persistData(filename, pokemonTrainer);
     }
 
-    @Override
+	@Override
     public Object loadData(String name) throws FileNotFoundException, PokedexException {
 
         if (path == null) {
             throw new PokedexException("Trainer path is not defined !");
         }
-
         PokemonTrainer pokemonTrainer = null;
 
         String filename = this.getFileName(path, name);
@@ -82,13 +99,11 @@ public class PokemonTrainerFactory implements IPokemonTrainerFactory, IGSerializ
         try (Reader reader = new FileReader(filename)) {
 
             Gson gson = new Gson();
-
+             
             pokemonTrainer = gson.fromJson(reader, PokemonTrainer.class);
 
-            System.out.println("trainer: " + pokemonTrainer.getName());
-
             if (pokemonTrainer == null) {
-                throw new PokedexException("Error loading Trainer !");
+                throw new PokedexException("Error loading trainer !");
             }
 
             reader.close();
@@ -98,5 +113,5 @@ public class PokemonTrainerFactory implements IPokemonTrainerFactory, IGSerializ
 
 
         return pokemonTrainer;
-}
+	}
 }

@@ -4,13 +4,13 @@ import com.google.gson.Gson;
 import fr.univavignon.pokedex.api.IPokemonMetadataProvider;
 import fr.univavignon.pokedex.api.PokedexException;
 import fr.univavignon.pokedex.api.PokemonMetadata;
-import fr.univavignon.pokedex.imp.IGSerializer;
+import fr.univavignon.pokedex.imp.SerializerTool;
 
 import java.io.*;
 import java.net.URL;
 
 
-public class PokemonMetadataProvider implements IPokemonMetadataProvider, IGSerializer {
+public class PokemonMetadataProvider implements IPokemonMetadataProvider, SerializerTool {
 
     private String API = "http://hoomies.fr/pokemeta/?id=";
 

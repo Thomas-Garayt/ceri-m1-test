@@ -8,7 +8,7 @@ import java.io.IOException;
 import com.google.gson.Gson;
 import fr.univavignon.pokedex.api.PokedexException;
 
-public interface IGSerializer {
+public interface SerializerTool {
 
 	/**
      * Home path
