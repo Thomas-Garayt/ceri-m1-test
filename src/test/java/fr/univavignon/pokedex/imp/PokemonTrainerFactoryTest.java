@@ -25,11 +25,8 @@ public class PokemonTrainerFactoryTest {
 
     @Before
     public void setUp() {
-
         pokemonTrainerFactory = new PokemonTrainerFactory();
-
         pokedexFactory = new PokedexFactory();
-
     }
 
     @Test
@@ -65,6 +62,5 @@ public class PokemonTrainerFactoryTest {
         
         assertNotNull(pokemonTrainer.getPokedex());
     }
-
 
 }
