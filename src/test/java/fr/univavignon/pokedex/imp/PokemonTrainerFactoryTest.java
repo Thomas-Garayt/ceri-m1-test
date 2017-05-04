@@ -36,9 +36,11 @@ public class PokemonTrainerFactoryTest {
     public void testCreateTrainer() {
 
         PokemonTrainer pokemonTrainer = pokemonTrainerFactory.createTrainer("Thomas", Team.VALOR, pokedexFactory);
-
+        PokemonTrainer pokemonTrainer2 = pokemonTrainerFactory.createTrainer("Thomas");
+        
         assertNotNull(pokemonTrainer);
-
+        assertNotNull(pokemonTrainer2);
+        
         Pokemon pokemon = pokemonTrainer.getPokedex().createPokemon(12, 456, 321, 1200, 12);
         pokemonTrainer.getPokedex().addPokemon(pokemon);
 
@@ -51,9 +53,11 @@ public class PokemonTrainerFactoryTest {
         }
 
         TestCase.assertEquals("Thomas", pokemonTrainer.getName());
-
         TestCase.assertEquals(Team.VALOR, pokemonTrainer.getTeam());
 
+        TestCase.assertEquals("Thomas", pokemonTrainer2.getName());
+        TestCase.assertEquals(Team.VALOR, pokemonTrainer2.getTeam());
+        
         assertNotNull(pokemonTrainer.getPokedex());
     }
 
