@@ -77,7 +77,8 @@ public class Main {
 	}
 
 	private static void createPokemon() throws IOException, PokedexException {
-		/* Correct data for test
+		/* 
+		 * Correct data for test
 		 * ID : 81 (Magnemite)
 		 * CP : 129
 		 * HP : 17
