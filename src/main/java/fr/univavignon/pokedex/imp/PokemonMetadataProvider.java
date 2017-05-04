@@ -13,12 +13,9 @@ public class PokemonMetadataProvider implements IPokemonMetadataProvider, Serial
 
     private String API = "http://hoomies.fr/pokemeta/?id=";
 
-    //private String rootPath;
-
     private String path;
 
     public PokemonMetadataProvider() {
-        //this.rootPath = System.getProperty("user.home") + "/";
         this.path = ".pokedex42/data/pokemons/";
         this.initPath(path);
     }
