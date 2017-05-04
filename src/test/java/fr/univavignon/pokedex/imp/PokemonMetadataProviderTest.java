@@ -10,6 +10,8 @@ import org.mockito.junit.MockitoRule;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.Assert;
+
 public class PokemonMetadataProviderTest {
 
     @Rule
@@ -41,17 +43,14 @@ public class PokemonMetadataProviderTest {
 
     @Test(expected = PokedexException.class)
     public void testGetPokemonMetadataErrorMin() throws PokedexException {
-
-        PokemonMetadata metadata = pokemonMetadataProvider.getPokemonMetadata(0);
-
+    	pokemonMetadataProvider.getPokemonMetadata(0);
     }
 
 
+    
     @Test(expected = PokedexException.class)
-    public void testGetPokemonMetadataErrorMax() throws PokedexException {
-
-        PokemonMetadata metadata = pokemonMetadataProvider.getPokemonMetadata(151);
-
+    public void testGetPokemonMetadataErrorMax() throws PokedexException {	
+		pokemonMetadataProvider.getPokemonMetadata(151);
     }
 
 }
