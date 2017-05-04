@@ -1,9 +1,9 @@
 package fr.univavignon.pokedex.imp;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
-import fr.univavignon.pokedex.api.IPokedexFactory;
 import fr.univavignon.pokedex.api.PokedexException;
 import fr.univavignon.pokedex.api.PokemonTrainer;
 import fr.univavignon.pokedex.api.Team;
@@ -13,8 +13,10 @@ public class Main {
 	private static Scanner sc;
 	
 	private static PokemonTrainer pokeTrainer = null;
+	private static PokemonTrainerFactory pokeTrainerFac = null;
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException, PokedexException {
+		pokeTrainerFac = new PokemonTrainerFactory();
 		sc = new Scanner(System.in);
 
 		while(true) {
@@ -32,9 +34,9 @@ public class Main {
 			}
 			
 			System.out.println("# 10 - Exit");
-			String str = sc.nextLine();
+			String str_Menu = sc.nextLine();
 			
-			switch(str) {
+			switch(str_Menu) {
 				case "1":
 					try {
 						loadTrainer();
@@ -47,10 +49,17 @@ public class Main {
 				case "3":
 					seePokedex();
 				default:
-					break;
 			}
 			
-			if(str == "10") break;
+			if(str_Menu.equals("10")) {
+				if(pokeTrainer != null) {
+					System.out.println("Saving the trainer data...");
+					pokeTrainerFac.saveData(pokeTrainer);	
+					System.out.println("Data saved.");
+				}
+				System.out.println("Bye !");
+				System.exit(0);
+			}
 		}		
 	}
 	
