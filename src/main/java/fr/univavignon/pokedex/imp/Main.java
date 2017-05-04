@@ -47,7 +47,7 @@ public class Main {
 				default:
 			}
 			
-			if(str_Menu.equals("10")) {
+			if("10".equals(str_Menu)) {
 				if(pokeTrainer != null) {
 					System.out.println("Saving the trainer data...");
 					pokeTrainerFac.saveData(pokeTrainer);	
